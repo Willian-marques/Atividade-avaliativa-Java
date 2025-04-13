@@ -1,82 +1,90 @@
-📝 Sistema de Gestão de Veículos de Transporte Público
-Projeto em Java que gerencia veículos (ônibus e metrôs) usando POO, herança e polimorfismo.
+# 🚌🚇 Sistema de Gestão de Transporte Público
 
-📌 Descrição
-Este sistema permite:
-✅ Cadastrar ônibus e metrôs
-✅ Listar veículos (todos ou por tipo)
-✅ Executar ações específicas (abrir portas, embarcar passageiros)
-✅ Contar veículos por categoria
+Este é um mini projeto avaliativo desenvolvido em Java com foco em Programação Orientada a Objetos (POO), utilizando herança, polimorfismo e abstração. O sistema permite o cadastro, exibição e operação de veículos de transporte público, como ônibus e metrôs.
 
-Desenvolvido como exercício de Programação Orientada a Objetos (POO) com foco em:
+---
 
-Classes abstratas
+## 🧠 Objetivo
 
-Herança (Onibus e Metro herdam de Veiculo)
+Simular um sistema básico de gestão de veículos de transporte público que:
 
-Polimorfismo (método exibirDados() sobrescrito)
+- Permite cadastrar veículos (ônibus e metrôs)
+- Lista todos os veículos ou por tipo
+- Executa ações específicas (abrir portas, embarcar passageiros)
+- Mostra o total de veículos cadastrados por tipo
 
-🛠 Tecnologias
-Java (JDK 11+)
+---
 
-Eclipse/IntelliJ/VSCode (qualquer IDE Java)
+## 📦 Estrutura do Projeto
 
-⚙️ Como Executar
-Clone o repositório:
+- **Classe abstrata `Veiculo`**
+  - Atributos: `id`, `marca`, `ano`
+  - Método abstrato: `exibirDados()`
 
-bash
-Copy
-git clone https://github.com/seu-usuario/sistema-transporte.git
-Abra o projeto na sua IDE Java favorita.
+- **Classe `Onibus`** (herda de `Veiculo`)
+  - Atributos: `capacidadePassageiros`, `tipo` (ex: articulado, micro-ônibus)
+  - Métodos: `abrirPortas()`, `fecharPortas()`, `exibirDados()`
 
-Execute a classe atAvaliativa.java (contém o método main).
+- **Classe `Metro`** (herda de `Veiculo`)
+  - Atributos: `numeroVagoes`, `temArCondicionado`
+  - Métodos: `embarcarPassageiros(int qtd)`, `desembarcarPassageiros(int qtd)`, `exibirDados()`
 
-🚀 Funcionalidades
-1. Menu Principal
-Copy
-=== Menu de Opções ===
+- **Classe `Garagem`**
+  - Gerencia uma lista de veículos
+  - Métodos: `adicionarVeiculo()`, `listarTodos()`, `listarPorTipo()`, `contarVeiculos()`, `buscarPorId()`
+
+- **Classe principal `ativ_avalia`**
+  - Interface de menu em terminal para interação com o sistema
+
+---
+
+## ▶️ Como Executar
+
+1. Certifique-se de ter o JDK instalado.
+2. Compile todos os arquivos `.java`:
+
+```bash
+javac *.java
+```
+
+3. Execute a classe principal:
+
+```bash
+java ativ_avalia
+```
+
+---
+
+## 💻 Funcionalidades do Menu
+
+```
 1. Cadastrar Ônibus
 2. Cadastrar Metrô
 3. Listar todos os veículos
 4. Listar veículos por tipo
-5. Executar ação específica
+5. Executar ação específica (abrir portas / embarcar passageiros)
 6. Mostrar total de veículos por tipo
 7. Sair
-2. Cadastro de Veículos
-Ônibus: ID, marca, ano, capacidade, tipo (articulado/convencional/micro-ônibus).
+```
 
-Metrô: ID, marca, ano, número de vagões, ar-condicionado (sim/não).
+---
 
-3. Ações Específicas
-Ônibus: abrirPortas(), fecharPortas().
+## 🛠️ Tecnologias
 
-Metrô: embarcarPassageiros(qtd), desembarcarPassageiros(qtd).
+- Linguagem: **Java**
+- Paradigmas: **POO (Programação Orientada a Objetos)**
 
-📂 Estrutura do Código
-Classe	Descrição
-Veiculo	Classe abstrata (não pode ser instanciada diretamente).
-Onibus	Herda de Veiculo e implementa ações de ônibus.
-Metro	Herda de Veiculo e implementa ações de metrô.
-Garagem	Gerencia a lista de veículos (ArrayList<Veiculo>).
-atAvaliativa	Classe principal com menu interativo.
-📊 Exemplo de Saída
-Listagem de Ônibus
-Copy
-[Ônibus]  
-ID: 1  
-Marca: Mercedes  
-Ano: 2020  
-Capacidade: 50  
-Tipo: articulado  
-Contagem de Veículos
-Copy
-Total de ônibus: 3  
-Total de metrôs: 2  
-📜 Licença
-Este projeto está sob a licença MIT.
+---
 
-Desenvolvido por [Seu Nome]
-📧 Contato: seu-email@exemplo.com
-🔗 GitHub: github.com/seu-usuario
+## 📚 Conceitos de POO Aplicados
 
-💡 Dica: Se quiser evoluir o projeto, considere adicionar persistência em arquivo ou interface gráfica! 🚀
+- **Abstração:** Classe `Veiculo` abstrata com método `exibirDados()`
+- **Herança:** `Onibus` e `Metro` herdam de `Veiculo`
+- **Polimorfismo:** Uso de `exibirDados()` com comportamento específico por tipo
+- **Encapsulamento:** Uso de atributos privados com construtores
+
+---
+
+## ✍️ Autor
+
+Desenvolvido por **Willian Bauer** — Projeto acadêmico para fins de avaliação.
