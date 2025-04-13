@@ -87,4 +87,4 @@ java ativ_avalia
 
 ## ✍️ Autor
 
-Desenvolvido por **Willian Bauer** — Projeto acadêmico para fins de avaliação.
+Desenvolvido por **Willian Marques* — Projeto acadêmico para fins de avaliação.
